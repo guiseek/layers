@@ -31,5 +31,9 @@
       }
     ]
   },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
   "defaultProject": "server-graphql"
 }
