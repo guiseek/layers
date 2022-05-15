@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "client-web": "apps/client/web",
-    "server-graphql": "apps/server/graphql"
+    "core-data": "packages/core/data",
+    "server-graphql": "apps/server/graphql",
+    "shared-data-access": "packages/shared/data-access"
   }
 }
