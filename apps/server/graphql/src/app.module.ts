@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
 import { GraphQLModule } from '@nestjs/graphql'
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
-import { upperDirectiveTransformer } from './common/directives/upper-case.directive';
+import { upperDirectiveTransformer } from './common/directives/upper-case.directive'
 import { CatsModule } from './cats/cats.module'
 
 @Module({
@@ -10,7 +10,7 @@ import { CatsModule } from './cats/cats.module'
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       typePaths: ['./**/*.graphql'],
-      transformSchema: schema => upperDirectiveTransformer(schema, 'upper'),
+      transformSchema: (schema) => upperDirectiveTransformer(schema, 'upper'),
       installSubscriptionHandlers: true,
     }),
   ],

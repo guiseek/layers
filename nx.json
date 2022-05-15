@@ -35,5 +35,21 @@
     "appsDir": "apps",
     "libsDir": "packages"
   },
-  "defaultProject": "server-graphql"
+  "defaultProject": "server-graphql",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "styled-components",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "styled-components"
+      },
+      "library": {
+        "style": "styled-components",
+        "linter": "eslint"
+      }
+    }
+  }
 }
