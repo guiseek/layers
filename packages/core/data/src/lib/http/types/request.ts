@@ -1,13 +1,26 @@
-import { HttpBody } from './body'
+import { HttpMethod } from './method'
 
-export type HttpRequestGet = RequestInit
-export type HttpRequestDelete = RequestInit
-export type HttpRequestPut<T = Record<string, string>> = RequestInit & {
-  data: HttpBody<T>
+export interface HttpRequest<T> extends Omit<RequestInit, 'method'> {
+  method?: HttpMethod
+  data?: T
 }
-export type HttpRequestPost<T = Record<string, string>> = RequestInit & {
-  data: HttpBody<T>
+
+export type HttpRequestGet = HttpRequest<void> & {
+  method?: 'GET'
 }
-export type HttpRequestPatch<T = Record<string, string>> = RequestInit & {
-  data?: HttpBody<T>
+
+export type HttpRequestDelete = HttpRequest<void> & {
+  method?: 'DELETE'
+}
+export type HttpRequestPut<T = any> = HttpRequest<T> & {
+  method?: 'PUT'
+}
+export type HttpRequestPost<T = any> = HttpRequest<T> & {
+  method?: 'POST'
+}
+export type HttpRequestPatch<T = any> = HttpRequest<T> & {
+  method?: 'PATCH'
+}
+export type HttpRequestHead<T = any> = HttpRequest<T> & {
+  method?: 'HEAD'
 }
