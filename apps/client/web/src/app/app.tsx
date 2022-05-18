@@ -6,8 +6,15 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 import nxextLogo from './nxext.svg'
+import { useHttpClient } from '@layers/shared/data-access'
 
 export function NxWelcome({ title }: { title: string }) {
+  const httpClient = useHttpClient('http://localhost:3333')
+
+  httpClient.get('graphql', {}).then(response => {
+    console.log(response);
+  })
+
   return (
     <>
       <style

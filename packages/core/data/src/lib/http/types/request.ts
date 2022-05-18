@@ -8,7 +8,9 @@ export interface HttpRequest<T> extends Omit<RequestInit, 'method'> {
 export type HttpRequestGet = HttpRequest<void> & {
   method?: 'GET'
 }
-
+export type HttpRequestHead = HttpRequest<void> & {
+  method?: 'HEAD'
+}
 export type HttpRequestDelete = HttpRequest<void> & {
   method?: 'DELETE'
 }
@@ -21,6 +23,12 @@ export type HttpRequestPost<T = any> = HttpRequest<T> & {
 export type HttpRequestPatch<T = any> = HttpRequest<T> & {
   method?: 'PATCH'
 }
-export type HttpRequestHead<T = any> = HttpRequest<T> & {
-  method?: 'HEAD'
+
+export interface HttpRequestMap {
+  GET: HttpRequestGet
+  HEAD: HttpRequestHead
+  DELETE: HttpRequestDelete
+  PATCH: HttpRequestPatch
+  POST: HttpRequestPost
+  PUT: HttpRequestPut
 }

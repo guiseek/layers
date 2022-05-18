@@ -1,4 +1,6 @@
 export type { HttpEndpoint } from './lib/http/types/endpoint'
+export type { HttpClientFn } from './lib/http/types/client-fn'
+export type { HttpOptions } from './lib/http/types/options'
 export type { HttpHeader } from './lib/http/types/header'
 export type { HttpMethod } from './lib/http/types/method'
 export type { HttpParams } from './lib/http/types/params'
@@ -6,6 +8,7 @@ export type { HttpQuery } from './lib/http/types/query'
 export type { HttpBody } from './lib/http/types/body'
 export type {
   HttpRequest,
+  HttpRequestMap,
   HttpRequestGet,
   HttpRequestPut,
   HttpRequestHead,

@@ -1,25 +1,8 @@
-import {
-  HttpMethod,
-  HttpRequestGet,
-  HttpRequestDelete,
-  HttpRequestPatch,
-  HttpRequestPost,
-  HttpRequestHead,
-  HttpRequestPut,
-} from '@layers/core/data'
-
-type FetchConfigMap = {
-  GET: HttpRequestGet
-  DELETE: HttpRequestDelete
-  PATCH: HttpRequestPatch
-  POST: HttpRequestPost
-  HEAD: HttpRequestHead
-  PUT: HttpRequestPut
-}
+import { HttpMethod, HttpRequestMap } from '@layers/core/data'
 
 export function fetchConfig<M extends HttpMethod>(
   method: M,
-  opts: FetchConfigMap[M]
+  opts: HttpRequestMap[M]
 ): RequestInit {
   let { body, data, headers = [] } = opts
 
