@@ -11,7 +11,7 @@ export function fetchConfig<M extends HttpMethod>(
 
   headers = new Headers(headers)
 
-  if (headers.get('Content-Type')) {
+  if (!headers.get('Content-Type')) {
     headers.set('Content-Type', 'application/json')
   }
 
