@@ -1,1 +1,1 @@
-export * from './lib/http/client'
+export { useHttpClient } from './lib/http/client'
